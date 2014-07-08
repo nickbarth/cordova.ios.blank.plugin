@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" id="cordova.ios.blank.plugin" version="1.0.0">
+  <engines>
+    <engine name="cordova" version=">=3.0.0" />
+  </engines>
+  <name>iOS Cordova Blank Plugin</name>
+  <description>A Blank Plugin For Testing iOS Integration With Cordova</description>
+  <author>Nick Barth</author>
+  <keywords></keywords>
+  <license>WTFPL</license>
+
+  <!-- JavaScript interface -->
+  <js-module src="www/iOSTest.js" name="iOSTest" target="www/iOSTest.js">
+    <clobbers target="window.iOSTest" />
+  </js-module>
+
+  <!-- ios -->
+  <platform name="ios">
+    <config-file target="config.xml" parent="plugins">
+      <feature name="iOSTest">
+        <param name="ios-package" value="iOSTest"/>
+        <param name="onload" value="true" />
+      </feature>
+      <plugin name="iOSTest" value="iOSTest"/>
+    </config-file>
+    <header-file src="src/ios/iOSTest.h" />
+    <source-file src="src/ios/iOSTest.m" />
+  </platform>
+</plugin>
